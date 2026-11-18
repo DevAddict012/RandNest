@@ -7,9 +7,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +37,7 @@ public final class UnlockActivity extends AppCompatActivity {
 
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    private EditText    etPin;
+    private TextInputEditText etPin;
     private Button      btnUnlock;
     private ProgressBar progressBar;
     private TextView    tvError;
@@ -182,7 +183,7 @@ public final class UnlockActivity extends AppCompatActivity {
         progressBar.setVisibility(loading ? View.VISIBLE : View.GONE);
     }
 
-    private static char[] getChars(EditText et) {
+    private static char[] getChars(TextInputEditText et) {
         int len = et.length();
         char[] chars = new char[len];
         if (len > 0) {

@@ -30,6 +30,7 @@ public final class GateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.Theme_Bank_system_Gate);
         setContentView(R.layout.activity_gate);
         checkSetupState();
     }

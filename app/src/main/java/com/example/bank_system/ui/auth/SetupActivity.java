@@ -122,8 +122,8 @@ public final class SetupActivity extends AppCompatActivity {
         }
     }
 
-    /** Extracts char[] from an EditText without leaving a String copy on the heap. */
-    private static char[] getChars(EditText et) {
+    /** Extracts char[] from a TextInputEditText without leaving a String copy on the heap. */
+    private static char[] getChars(TextInputEditText et) {
         int len = et.length();
         char[] chars = new char[len];
         if (len > 0) {
