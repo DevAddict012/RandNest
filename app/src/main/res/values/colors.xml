@@ -1,5 +1,11 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- RandNest Brand Colors -->
+    <color name="primary_navy">#012451</color>
+    <color name="primary_teal">#02AB89</color>
+    <color name="dark_navy">#011A3A</color>
+    <color name="deep_teal">#028F71</color>
+    <color name="bright_teal">#04B894</color>
+    <color name="off_white">#F7F9FA</color>
 </resources>
