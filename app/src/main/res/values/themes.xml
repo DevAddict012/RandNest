@@ -1,9 +1,116 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- ================================================================== -->
+    <!-- RandNest base theme — Material3, no action bar                      -->
+    <!-- Brand: navy #012451 (primary), teal #02AB89 (secondary)             -->
+    <!-- ================================================================== -->
     <style name="Base.Theme.Bank_system" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Primary = deep navy -->
+        <item name="colorPrimary">@color/primary_navy</item>
+        <item name="colorOnPrimary">@color/off_white</item>
+        <item name="colorPrimaryContainer">@color/dark_navy</item>
+        <item name="colorOnPrimaryContainer">@color/off_white</item>
+
+        <!-- Secondary = teal -->
+        <item name="colorSecondary">@color/primary_teal</item>
+        <item name="colorOnSecondary">@color/off_white</item>
+        <item name="colorSecondaryContainer">@color/deep_teal</item>
+        <item name="colorOnSecondaryContainer">@color/off_white</item>
+
+        <!-- Surface / background -->
+        <item name="colorSurface">@color/off_white</item>
+        <item name="colorOnSurface">@color/primary_navy</item>
+        <item name="android:colorBackground">@color/off_white</item>
+        <item name="android:windowBackground">@color/off_white</item>
+
+        <!-- Status bar matches navy header -->
+        <item name="android:statusBarColor">@color/primary_navy</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">@color/primary_navy</item>
+
+        <!-- Smooth window animation for all activity transitions -->
+        <item name="android:windowAnimationStyle">@style/RandNestWindowAnimation</item>
+
     </style>
 
     <style name="Theme.Bank_system" parent="Base.Theme.Bank_system" />
+
+    <!-- ================================================================== -->
+    <!-- Activity transition animations                                       -->
+    <!-- ================================================================== -->
+    <style name="RandNestWindowAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <!-- ================================================================== -->
+    <!-- Shared component styles                                              -->
+    <!-- ================================================================== -->
+
+    <!-- Primary filled button — navy bg, off-white text, 8dp corner -->
+    <style name="RandNest.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary_navy</item>
+        <item name="android:textColor">@color/off_white</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <!-- Teal accent button -->
+    <style name="RandNest.Button.Teal" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary_teal</item>
+        <item name="android:textColor">@color/off_white</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:minHeight">52dp</item>
+    </style>
+
+    <!-- Outlined text button (secondary actions) -->
+    <style name="RandNest.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/primary_teal</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <!-- Input field -->
+    <style name="RandNest.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary_teal</item>
+        <item name="hintTextColor">@color/primary_teal</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+    </style>
+
+    <!-- Card surface -->
+    <style name="RandNest.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">3dp</item>
+        <item name="contentPaddingLeft">20dp</item>
+        <item name="contentPaddingRight">20dp</item>
+        <item name="contentPaddingTop">20dp</item>
+        <item name="contentPaddingBottom">20dp</item>
+    </style>
+
+    <!-- Demo notice banner -->
+    <style name="RandNest.DemoBanner">
+        <item name="android:background">@color/primary_teal</item>
+        <item name="android:textColor">@color/off_white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <!-- Splash / gate screen: full navy background -->
+    <style name="Theme.Bank_system.Gate" parent="Theme.Bank_system">
+        <item name="android:windowBackground">@color/primary_navy</item>
+        <item name="android:colorBackground">@color/primary_navy</item>
+        <item name="android:windowAnimationStyle">@style/RandNestWindowAnimation</item>
+    </style>
+
 </resources>

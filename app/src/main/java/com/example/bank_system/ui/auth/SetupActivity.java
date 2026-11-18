@@ -6,9 +6,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,9 +38,9 @@ public final class SetupActivity extends AppCompatActivity {
 
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    private EditText    etDisplayName;
-    private EditText    etPin;
-    private EditText    etPinConfirm;
+    private TextInputEditText etDisplayName;
+    private TextInputEditText etPin;
+    private TextInputEditText etPinConfirm;
     private Button      btnCreate;
     private ProgressBar progressBar;
     private TextView    tvError;

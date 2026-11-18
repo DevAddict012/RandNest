@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UI-03: PIN unlock -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/off_white">
+
+    <!-- ── Navy header ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.42"
+        android:background="@color/primary_navy"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <ImageView
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:src="@drawable/randnest_logo"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/cd_randnest_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/unlock_title"
+            android:textColor="@color/off_white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/unlock_subtitle"
+            android:textColor="@color/primary_teal"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- ── Card form ── -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.58"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="24dp">
+
+            <!-- PIN field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_enter_pin"
+                app:passwordToggleEnabled="true"
+                style="@style/RandNest.TextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:maxLength="12"
+                    android:textSize="20sp"
+                    android:letterSpacing="0.3"
+                    android:contentDescription="@string/label_enter_pin" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Error / lockout message -->
+            <TextView
+                android:id="@+id/tv_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#D32F2F"
+                android:textSize="13sp"
+                android:visibility="gone"
+                android:importantForAccessibility="yes" />
+
+            <!-- Progress -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:indeterminateTint="@color/primary_teal"
+                android:visibility="gone"
+                android:contentDescription="@string/cd_loading" />
+
+            <!-- Unlock button -->
+            <Button
+                android:id="@+id/btn_unlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/btn_unlock"
+                style="@style/RandNest.Button.Primary" />
+
+            <!-- Erase data (lost PIN) — subtle text button -->
+            <Button
+                android:id="@+id/btn_erase_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/btn_erase_data"
+                style="@style/RandNest.Button.Text" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

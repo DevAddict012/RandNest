@@ -1,3 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">bank_system</string>
+
+    <!-- App identity -->
+    <string name="app_name">RandNest</string>
+    <string name="app_tagline">Your money. Your plan. Your control.</string>
+
+    <!-- Demo / simulation notices -->
+    <string name="label_demo_notice">DEMO · All balances are simulated</string>
+    <string name="simulation_notice_full">RandNest is a banking simulation.\nBalances and transfers are virtual.\nNo real funds move.</string>
+
+    <!-- Setup screen -->
+    <string name="setup_title">Create your profile</string>
+    <string name="setup_simulation_notice">⚠ SIMULATION — No real money is used. This app handles virtual funds only.</string>
+    <string name="setup_data_loss_warning">All demo data is stored on this device only. Uninstalling, clearing app data, or resetting may permanently erase it.</string>
+    <string name="label_display_name">Your name</string>
+    <string name="hint_display_name">e.g. Alex</string>
+    <string name="label_pin">Create a PIN (6–12 digits)</string>
+    <string name="hint_pin">Enter PIN</string>
+    <string name="label_pin_confirm">Confirm PIN</string>
+    <string name="hint_pin_confirm">Re-enter PIN</string>
+    <string name="btn_create_profile">Create profile</string>
+
+    <!-- Unlock screen -->
+    <string name="unlock_title">Welcome back</string>
+    <string name="unlock_subtitle">Enter your PIN to continue</string>
+    <string name="label_enter_pin">PIN</string>
+    <string name="hint_enter_pin">Enter PIN</string>
+    <string name="btn_unlock">Unlock</string>
+    <string name="btn_erase_data">Erase demo data</string>
+
+    <!-- Dashboard (stub) -->
+    <string name="dashboard_title">Dashboard</string>
+
+    <!-- Dialogs — erase confirmation -->
+    <string name="dialog_erase_title">Erase all demo data?</string>
+    <string name="dialog_erase_message">This will permanently delete your profile, all virtual accounts, transactions, bills and planning data. This cannot be undone.</string>
+    <string name="dialog_erase_continue">Continue</string>
+    <string name="dialog_erase_type_title">Type ERASE to confirm</string>
+    <string name="dialog_erase_hint">Type ERASE</string>
+    <string name="dialog_erase_confirm">Erase everything</string>
+
+    <!-- Errors -->
+    <string name="error_unknown">Something went wrong. Please try again.</string>
+    <string name="error_name_required">Please enter your name.</string>
+    <string name="error_name_too_long">Name must be 60 characters or fewer.</string>
+    <string name="error_pin_invalid">PIN must be 6–12 digits.</string>
+    <string name="error_pin_mismatch">PINs do not match.</string>
+    <string name="error_profile_exists">A profile already exists on this device.</string>
+    <string name="error_wrong_pin">Incorrect PIN. Please try again.</string>
+    <string name="error_locked">Too many attempts. Please wait before trying again.</string>
+    <string name="error_locked_countdown">Too many attempts. Try again in %d seconds.</string>
+    <string name="error_storage">Could not save. Please check the result before retrying.</string>
+    <string name="error_reset_failed">Reset failed. Your data has not been changed.</string>
+    <string name="error_confirm_required">Type ERASE to confirm.</string>
+    <string name="error_no_profile">No profile found.</string>
+
+    <!-- Accessibility content descriptions -->
+    <string name="cd_loading">Loading, please wait</string>
+    <string name="cd_randnest_logo">RandNest logo</string>
+    <string name="cd_lock_icon">Locked</string>
+
 </resources>

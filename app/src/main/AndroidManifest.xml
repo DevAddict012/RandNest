@@ -2,24 +2,48 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- No INTERNET permission — RandNest is fully offline -->
+
     <application
-        android:allowBackup="true"
+        android:name=".RandNestApp"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bank_system">
+
+        <!--
+             GateActivity is the ONLY exported Activity.
+             All others use exported="false" so they cannot be reached
+             via external intents or deep links.
+        -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.gate.GateActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Bank_system.Gate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.auth.SetupActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.auth.UnlockActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.dashboard.DashboardActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

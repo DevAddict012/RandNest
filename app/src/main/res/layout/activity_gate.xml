@@ -1,32 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- UI-01: Gate / routing splash -->
+<!-- UI-01: Gate / routing splash — full navy, logo centred -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_navy"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="40dp">
 
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/randnest_logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/cd_randnest_logo" />
+
+    <!-- App name: "Rand" in off-white, "Nest" in teal -->
     <TextView
-        android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="@string/app_name"
-        android:textAppearance="?attr/textAppearanceHeadlineMedium"
-        android:contentDescription="@string/app_name" />
+        android:textColor="@color/off_white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02"
+        android:fontFamily="sans-serif-medium" />
 
+    <!-- Tagline -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/label_demo_notice"
-        android:textAppearance="?attr/textAppearanceBodyMedium" />
+        android:text="@string/app_tagline"
+        android:textColor="@color/primary_teal"
+        android:textSize="13sp"
+        android:letterSpacing="0.04" />
 
+    <!-- Loading indicator — teal tint -->
     <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="56dp"
+        android:indeterminateTint="@color/primary_teal"
         android:contentDescription="@string/cd_loading" />
 
 </LinearLayout>

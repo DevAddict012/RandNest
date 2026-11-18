@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UI-02: First-time profile and PIN setup -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/off_white">
+
+    <!-- ── Navy header panel ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_navy"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="40dp"
+        android:paddingBottom="28dp"
+        android:paddingHorizontal="24dp">
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/randnest_logo"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/cd_randnest_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/app_name"
+            android:textColor="@color/off_white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/setup_title"
+            android:textColor="@color/primary_teal"
+            android:textSize="13sp"
+            android:letterSpacing="0.04" />
+
+    </LinearLayout>
+
+    <!-- ── Simulation notice banner ── -->
+    <TextView
+        android:id="@+id/tv_simulation_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_teal"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:text="@string/setup_simulation_notice"
+        android:textColor="@color/off_white"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:letterSpacing="0.03"
+        android:contentDescription="@string/setup_simulation_notice" />
+
+    <!-- ── Scrollable form ── -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Display name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_display_name"
+                style="@style/RandNest.TextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_display_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:maxLength="60"
+                    android:contentDescription="@string/label_display_name" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- PIN -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/label_pin"
+                app:passwordToggleEnabled="true"
+                style="@style/RandNest.TextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:maxLength="12"
+                    android:contentDescription="@string/label_pin" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- PIN confirm -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/label_pin_confirm"
+                app:passwordToggleEnabled="true"
+                style="@style/RandNest.TextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pin_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:maxLength="12"
+                    android:contentDescription="@string/label_pin_confirm" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Data loss warning -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/setup_data_loss_warning"
+                android:textColor="#888"
+                android:textSize="12sp"
+                android:lineSpacingMultiplier="1.4" />
+
+            <!-- Error message -->
+            <TextView
+                android:id="@+id/tv_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#D32F2F"
+                android:textSize="13sp"
+                android:visibility="gone"
+                android:importantForAccessibility="yes" />
+
+            <!-- Progress -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:indeterminateTint="@color/primary_teal"
+                android:visibility="gone"
+                android:contentDescription="@string/cd_loading" />
+
+            <!-- Create profile button -->
+            <Button
+                android:id="@+id/btn_create_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/btn_create_profile"
+                style="@style/RandNest.Button.Primary" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
