@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UI-05: Account list -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/off_white">
+
+    <!-- Navy header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_navy"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="14dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:tint="@color/off_white"
+            android:padding="4dp"
+            android:contentDescription="@string/cd_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/title_accounts"
+            android:textColor="@color/off_white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
+
+    </LinearLayout>
+
+    <!-- Demo notice strip -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_teal"
+        android:paddingVertical="5dp"
+        android:text="@string/label_demo_notice"
+        android:textColor="@color/off_white"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:letterSpacing="0.06" />
+
+    <!-- Loading -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:indeterminateTint="@color/primary_teal"
+        android:visibility="gone"
+        android:contentDescription="@string/cd_loading" />
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="@string/accounts_empty"
+        android:textColor="#888"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <!-- Account cards scroll area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/accounts_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp" />
+
+    </ScrollView>
+
+    <!-- FAB-style Add Account button at bottom -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_add_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="20dp"
+        android:text="@string/btn_add_account"
+        android:textColor="@color/off_white"
+        android:backgroundTint="@color/primary_navy"
+        app:iconTint="@color/primary_teal"
+        android:contentDescription="@string/btn_add_account"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+</LinearLayout>

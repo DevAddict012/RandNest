@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UI-06: Create a new virtual account -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/off_white">
+
+    <!-- Navy header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_navy"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="14dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:tint="@color/off_white"
+            android:padding="4dp"
+            android:contentDescription="@string/cd_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/title_create_account"
+            android:textColor="@color/off_white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Account name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_account_name"
+                style="@style/RandNest.TextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_account_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:maxLength="50"
+                    android:contentDescription="@string/label_account_name" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Account type -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_account_type"
+                android:textColor="@color/primary_navy"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/rg_account_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_spending"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/account_type_spending"
+                    android:textColor="@color/primary_navy"
+                    android:buttonTint="@color/primary_teal" />
+
+                <RadioButton
+                    android:id="@+id/rb_savings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/account_type_savings"
+                    android:textColor="@color/primary_navy"
+                    android:buttonTint="@color/primary_teal" />
+
+            </RadioGroup>
+
+            <!-- Type explanation -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/account_type_hint"
+                android:textColor="#888"
+                android:textSize="12sp"
+                android:lineSpacingMultiplier="1.4" />
+
+            <!-- Opening balance note -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_info_banner"
+                android:padding="12dp"
+                android:text="@string/account_opening_balance_note"
+                android:textColor="@color/primary_navy"
+                android:textSize="12sp"
+                android:lineSpacingMultiplier="1.4" />
+
+            <!-- Error -->
+            <TextView
+                android:id="@+id/tv_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#D32F2F"
+                android:textSize="13sp"
+                android:visibility="gone"
+                android:importantForAccessibility="yes" />
+
+            <!-- Progress -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:indeterminateTint="@color/primary_teal"
+                android:visibility="gone"
+                android:contentDescription="@string/cd_loading" />
+
+            <!-- Create button -->
+            <Button
+                android:id="@+id/btn_create_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/btn_create_account"
+                style="@style/RandNest.Button.Primary" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

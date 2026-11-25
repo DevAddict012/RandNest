@@ -44,6 +44,19 @@
             android:name=".ui.dashboard.DashboardActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ui.accounts.AccountsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.accounts.CreateAccountActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.accounts.AccountDetailActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

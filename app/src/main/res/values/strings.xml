@@ -31,6 +31,49 @@
 
     <!-- Dashboard (stub) -->
     <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_no_account">No spending account selected</string>
+    <string name="dashboard_no_account_hint">Go to Accounts and tap "Use for planning" on a Spending account.</string>
+    <string name="label_posted_balance">Posted balance (simulated)</string>
+    <string name="label_safe_to_spend">Estimated safe to spend</string>
+    <string name="safe_to_spend_pending">Available in M09</string>
+    <string name="coming_soon">Coming soon…</string>
+
+    <!-- Navigation bar -->
+    <string name="nav_accounts">Accounts</string>
+    <string name="nav_bills">Bills</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Accounts screens -->
+    <string name="title_accounts">My Accounts</string>
+    <string name="title_create_account">New Account</string>
+    <string name="title_account_detail">Account</string>
+    <string name="accounts_empty">No accounts yet.\nTap + to create your first account.</string>
+    <string name="label_account_name">Account name</string>
+    <string name="label_account_type">Account type</string>
+    <string name="account_type_spending">Spending</string>
+    <string name="account_type_savings">Savings</string>
+    <string name="account_type_hint">Spending accounts are used for the Safe-to-Spend estimate. Both types hold virtual ZAR balances.</string>
+    <string name="account_opening_balance_note">ℹ New accounts start at R0.00. Use "Add demo funds" after creating the account to add a simulated opening balance.</string>
+    <string name="label_planning_account">Planning account ✓</string>
+    <string name="label_actions">Actions</string>
+    <string name="btn_add_account">+ Add account</string>
+    <string name="btn_view_detail">View details</string>
+    <string name="btn_use_for_planning">Use for planning</string>
+    <string name="btn_create_account">Create account</string>
+    <string name="btn_add_funds">Add demo funds</string>
+    <string name="btn_record_expense">Record expense</string>
+    <string name="btn_transfer">Transfer funds</string>
+
+    <!-- Errors — accounts -->
+    <string name="error_account_name_required">Please enter an account name.</string>
+    <string name="error_account_name_too_long">Account name must be 50 characters or fewer.</string>
+    <string name="error_account_not_found">Account not found.</string>
+    <string name="error_must_be_spending">Only Spending accounts can be selected for planning.</string>
+    <string name="error_overflow">Amount is outside the supported demo range.</string>
+
+    <!-- Accessibility -->
+    <string name="cd_back">Back</string>
 
     <!-- Dialogs — erase confirmation -->
     <string name="dialog_erase_title">Erase all demo data?</string>

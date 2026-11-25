@@ -6,8 +6,11 @@ import android.app.Application.ActivityLifecycleCallbacks;
 import android.os.Bundle;
 
 import com.example.bank_system.data.RandNestDbHelper;
+import com.example.bank_system.data.repository.AccountRepository;
 import com.example.bank_system.data.repository.AuthRepository;
+import com.example.bank_system.data.sqlite.SqliteAccountRepository;
 import com.example.bank_system.data.sqlite.SqliteAuthRepository;
+import com.example.bank_system.domain.service.AccountService;
 import com.example.bank_system.domain.service.AuthService;
 import com.example.bank_system.domain.service.SessionManager;
 
@@ -37,6 +40,7 @@ public final class RandNestApp extends Application {
     private RandNestDbHelper dbHelper;
     private SessionManager   sessionManager;
     private AuthService      authService;
+    private AccountService   accountService;
 
     // Track how many activities are currently visible (started but not stopped)
     private int visibleActivityCount = 0;
@@ -55,6 +59,9 @@ public final class RandNestApp extends Application {
 
         AuthRepository authRepo = new SqliteAuthRepository(dbHelper);
         authService             = new AuthService(authRepo, sessionManager);
+
+        AccountRepository accountRepo = new SqliteAccountRepository(dbHelper);
+        accountService              = new AccountService(accountRepo);
 
         // Register lifecycle callbacks to track background/foreground transitions
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
@@ -93,8 +100,9 @@ public final class RandNestApp extends Application {
         return (RandNestApp) ctx.getApplicationContext();
     }
 
-    public ExecutorService  getExecutor()       { return executor; }
-    public RandNestDbHelper getDbHelper()        { return dbHelper; }
-    public SessionManager   getSessionManager()  { return sessionManager; }
-    public AuthService      getAuthService()     { return authService; }
+    public ExecutorService  getExecutor()        { return executor; }
+    public RandNestDbHelper getDbHelper()         { return dbHelper; }
+    public SessionManager   getSessionManager()   { return sessionManager; }
+    public AuthService      getAuthService()      { return authService; }
+    public AccountService   getAccountService()   { return accountService; }
 }
